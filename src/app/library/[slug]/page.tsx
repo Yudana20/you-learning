@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export function generateStaticParams() {
-  return materials.map((m) => ({ slug: m.slug }));
+  return materials.filter((m) => m.slug !== "how-to-a-leadership").map((m) => ({ slug: m.slug }));
 }
 
 export default async function MaterialDetailPage({ params }: PageProps) {

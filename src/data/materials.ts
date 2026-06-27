@@ -116,19 +116,17 @@ export const materials: Material[] = [
     description:
       "Panduan personal pengembangan kepemimpinan dengan 16 skill modul interaktif — dari Self-Awareness hingga Time Management. Dilengkapi framework, latihan praktik, dan refleksi mendalam untuk setiap skill.",
     summary:
-      "Buku ini adalah peta perjalanan pengembangan diri Yudana menuju posisi kepemimpinan di Banana Digital Boost. Berisi 16 modul skill (L1–L8 Leadership Skills dan M1–M8 Managerial Skills), masing-masing dengan framework, konsep kunci, latihan praktik kontekstual, dan pertanyaan refleksi. Dipelajari dalam 3 fase selama 42 bulan.",
+      "Buku ini adalah peta perjalanan pengembangan diri Yudana menuju posisi kepemimpinan di Banana Digital Boost. Berisi 16 modul skill (L1–L8 Leadership Skills dan M1–M8 Managerial Skills).",
     highlights: [
       "8 Leadership Skills: Self-Awareness, Communication, Decision Making, dan lainnya",
       "8 Managerial Skills: Planning, Delegation, Performance Management, dan lainnya",
-      "Framework per skill dengan referensi buku & TED Talk pilihan",
-      "Latihan praktik kontekstual di lingkungan kerja nyata",
-      "Roadmap 3 fase: Foundation (Bln 1–12) → Growth (Bln 13–24) → Leadership (Bln 25–42)",
+      "Roadmap 3 fase: Foundation → Growth → Leadership",
       "Mind map interaktif untuk navigasi antar skill",
     ],
     readingTimeMinutes: 202,
-    pdfPath: "/assets/pdfs/how-to-a-leadership/l1-self-awareness.pdf",
+    pdfPath: "/assets/pdfs/how-to-a-leadership/how-to-a-leadership-full.pdf",
     coverGradient: "from-[#151345] to-[#423ccf]",
-    tags: ["leadership", "managerial", "self-development", "skill", "yudana", "bdb"],
+    tags: ["leadership", "managerial", "skill", "yudana"],
     publishedAt: "2026-06-27",
   },
   {
