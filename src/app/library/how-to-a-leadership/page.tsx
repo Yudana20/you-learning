@@ -14,9 +14,9 @@ const KERANGKA = [
   { label: "01", title: "Mind Map: Peta Besar", desc: "Visual seluruh konsep buku dalam satu pandang", page: 4 },
   { label: "02", title: "Fondasi: Mengapa Leadership?", desc: "Definisi · Leadership vs Management · Self-Assessment", page: 5 },
   { label: "03", title: "Roadmap: 3 Fase", desc: "Foundation → Growth → Leadership · Indikator Naik Fase", page: 6 },
-  { label: "06", title: "Sistem Belajar & Dokumentasi", desc: "Practice Log · Evidence Portfolio · Feedback · Mentor Sessions", page: null },
-  { label: "07", title: "Sumber Belajar", desc: "Priority Reading List · TED Talks · Referensi Online", page: null },
-  { label: "08", title: "Penutup & Komitmen", desc: "30-Day Commitment · Catatan Akhir", page: null },
+  { label: "06", title: "Sistem Belajar & Dokumentasi", desc: "Practice Log · Evidence Portfolio · Feedback · Mentor Sessions", page: 197 },
+  { label: "07", title: "Sumber Belajar", desc: "Priority Reading List · TED Talks · Referensi Online", page: 199 },
+  { label: "08", title: "Penutup & Komitmen", desc: "30-Day Commitment · Catatan Akhir", page: 201 },
 ];
 
 const FULL_PDF = "/assets/pdfs/how-to-a-leadership/how-to-a-leadership-full.pdf";
@@ -132,11 +132,9 @@ export default function HowToLeadershipPage() {
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {KERANGKA.map((item) => (
-            <a
+            <Link
               key={item.label}
-              href={FULL_PDF}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`/read/how-to-a-leadership/full?page=${item.page}&section=${item.label}`}
               className="flex gap-3 p-4 bg-white rounded-xl border border-gray-100 hover:border-[#423ccf] hover:shadow-sm transition-all group"
             >
               <div className="w-9 h-9 rounded-lg bg-[#f1f5f9] flex items-center justify-center flex-shrink-0 group-hover:bg-[#151345] transition-colors">
@@ -146,7 +144,7 @@ export default function HowToLeadershipPage() {
                 <div className="text-sm font-semibold text-gray-800 leading-tight mb-0.5">{item.title}</div>
                 <div className="text-xs text-gray-400 leading-relaxed">{item.desc}</div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </section>

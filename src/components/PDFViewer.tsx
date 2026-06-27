@@ -5,9 +5,11 @@ import { useState, useEffect } from "react";
 interface PDFViewerProps {
   pdfPath: string;
   title: string;
+  initialPage?: number;
 }
 
-export default function PDFViewer({ pdfPath, title }: PDFViewerProps) {
+export default function PDFViewer({ pdfPath, title, initialPage }: PDFViewerProps) {
+  const src = initialPage && initialPage > 1 ? `${pdfPath}#page=${initialPage}` : pdfPath;
   const [isMobile, setIsMobile] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -45,7 +47,7 @@ export default function PDFViewer({ pdfPath, title }: PDFViewerProps) {
           </p>
           <div className="flex gap-2 flex-shrink-0">
             <a
-              href={pdfPath}
+              href={src}
               target="_blank"
               rel="noopener noreferrer"
               className="px-3 py-1.5 bg-primary-500 hover:bg-primary-600 text-white rounded-lg text-xs font-semibold transition-colors whitespace-nowrap"
@@ -61,7 +63,7 @@ export default function PDFViewer({ pdfPath, title }: PDFViewerProps) {
           style={{ height: "calc(100dvh - 13rem)" }}
         >
           <iframe
-            src={pdfPath}
+            src={src}
             title={title}
             className="w-full h-full"
             allow="fullscreen"
@@ -90,7 +92,7 @@ export default function PDFViewer({ pdfPath, title }: PDFViewerProps) {
       {/* Subtle fallback link for desktop too */}
       <div className="flex items-center justify-end gap-3">
         <a
-          href={pdfPath}
+          href={src}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1.5 text-xs text-foreground/40 hover:text-primary-500 transition-colors"
@@ -115,7 +117,7 @@ export default function PDFViewer({ pdfPath, title }: PDFViewerProps) {
       </div>
 
       <iframe
-        src={pdfPath}
+        src={src}
         title={title}
         className="w-full rounded-xl border border-border"
         style={{ height: "calc(100dvh - 10rem)" }}
