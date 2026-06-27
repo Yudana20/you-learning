@@ -10,10 +10,10 @@ export const metadata: Metadata = {
 };
 
 const KERANGKA = [
-  { label: "00", title: "Pembuka", desc: "Kata Pengantar · Tentang Buku · Cara Menggunakannya", page: 3 },
-  { label: "01", title: "Mind Map: Peta Besar", desc: "Visual seluruh konsep buku dalam satu pandang", page: 4 },
-  { label: "02", title: "Fondasi: Mengapa Leadership?", desc: "Definisi · Leadership vs Management · Self-Assessment", page: 5 },
-  { label: "03", title: "Roadmap: 3 Fase", desc: "Foundation → Growth → Leadership · Indikator Naik Fase", page: 6 },
+  { label: "00", title: "Pembuka", desc: "Kata Pengantar · Tentang Buku · Cara Menggunakannya", page: 5 },
+  { label: "01", title: "Mind Map: Peta Besar", desc: "Visual seluruh konsep buku dalam satu pandang", page: 7 },
+  { label: "02", title: "Fondasi: Mengapa Leadership?", desc: "Definisi · Leadership vs Management · Self-Assessment", page: 8 },
+  { label: "03", title: "Roadmap: 3 Fase", desc: "Foundation → Growth → Leadership · Indikator Naik Fase", page: 10 },
   { label: "06", title: "Sistem Belajar & Dokumentasi", desc: "Practice Log · Evidence Portfolio · Feedback · Mentor Sessions", page: 197 },
   { label: "07", title: "Sumber Belajar", desc: "Priority Reading List · TED Talks · Referensi Online", page: 199 },
   { label: "08", title: "Penutup & Komitmen", desc: "30-Day Commitment · Catatan Akhir", page: 201 },
