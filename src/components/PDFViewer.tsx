@@ -36,41 +36,42 @@ export default function PDFViewer({ pdfPath, title, initialPage }: PDFViewerProp
     );
   }
 
-  // Mobile: iframe PDF support varies. Show inline viewer with prominent fallback.
+  // Mobile: iframe doesn't support #page=N fragment. Show card-style CTA instead.
   if (isMobile) {
     return (
-      <div className="w-full flex flex-col gap-3">
-        {/* Always-visible action bar on mobile */}
-        <div className="flex items-center justify-between gap-2 p-3 bg-primary-50 border border-primary-100 rounded-xl">
-          <p className="text-xs text-primary-700 leading-snug">
-            PDF tidak tampil? Buka langsung di browser Anda.
-          </p>
-          <div className="flex gap-2 flex-shrink-0">
-            <a
-              href={src}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-3 py-1.5 bg-primary-500 hover:bg-primary-600 text-white rounded-lg text-xs font-semibold transition-colors whitespace-nowrap"
-            >
-              Buka PDF
-            </a>
+      <div className="w-full flex flex-col gap-4 px-1">
+        {/* Primary CTA: open at specific page */}
+        <a
+          href={src}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-between gap-3 p-4 bg-primary-500 hover:bg-primary-600 text-white rounded-2xl transition-colors"
+        >
+          <div>
+            <div className="font-semibold text-sm mb-0.5">
+              {initialPage && initialPage > 1 ? `Buka di Halaman ${initialPage}` : "Buka PDF"}
+            </div>
+            <div className="text-xs text-white/70">{title}</div>
           </div>
-        </div>
+          <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
 
-        {/* PDF iframe — fills remaining viewport */}
+        {/* PDF inline preview — best-effort, won't jump to page on mobile */}
         <div
           className="w-full rounded-xl overflow-hidden border border-border"
-          style={{ height: "calc(100dvh - 13rem)" }}
+          style={{ height: "calc(100dvh - 16rem)" }}
         >
           <iframe
-            src={src}
+            src={pdfPath}
             title={title}
             className="w-full h-full"
             allow="fullscreen"
           />
         </div>
 
-        {/* Download fallback */}
+        {/* Download */}
         <a
           href={pdfPath}
           download
