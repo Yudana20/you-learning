@@ -132,19 +132,25 @@ export default function HowToLeadershipPage() {
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {KERANGKA.map((item) => (
-            <Link
+            <a
               key={item.label}
-              href={`/read/how-to-a-leadership/full?page=${item.page}&section=${item.label}`}
+              href={`${FULL_PDF}#page=${item.page}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex gap-3 p-4 bg-white rounded-xl border border-gray-100 hover:border-[#423ccf] hover:shadow-sm transition-all group"
             >
               <div className="w-9 h-9 rounded-lg bg-[#f1f5f9] flex items-center justify-center flex-shrink-0 group-hover:bg-[#151345] transition-colors">
                 <span className="text-xs font-black text-gray-400 group-hover:text-white transition-colors">{item.label}</span>
               </div>
-              <div className="min-w-0">
+              <div className="min-w-0 flex-1">
                 <div className="text-sm font-semibold text-gray-800 leading-tight mb-0.5">{item.title}</div>
                 <div className="text-xs text-gray-400 leading-relaxed">{item.desc}</div>
+                <div className="text-xs text-[#423ccf] mt-1 font-medium">Hal. {item.page}</div>
               </div>
-            </Link>
+              <svg className="w-4 h-4 text-gray-200 group-hover:text-[#423ccf] flex-shrink-0 self-center transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
           ))}
         </div>
       </section>
